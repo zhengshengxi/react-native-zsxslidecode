@@ -31,7 +31,7 @@ export class ZSXSlideCode extends Component {
 
         /**
          * 验证结果回调 必须的
-         * 返回
+         * 返回 成功：true    失败：false
          * 取值: e.nativeEvent.result
          * */
         onResult:PropTypes.any.isRequired,
