@@ -3,7 +3,7 @@
 ##简介：
 滑动验证码，目前只支持iOS
 
-![Alt text](https://pic4.zhimg.com/80/v2-57f0f63de851546e9e0b42ff293af5d1_hd.jpg "optional title")
+![Alt text](react-native-zsxslidecode/ExampleImage/example.gif "optional title")
 
 ##安装：
 ####使用以下命令导入
