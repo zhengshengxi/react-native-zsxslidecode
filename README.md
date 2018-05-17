@@ -2,9 +2,9 @@
 
 ##简介：
 滑动验证码，目前只支持iOS
+
 ![avatar](https://github.com/zhengshengxi/react-native-zsxslidecode/blob/master/ExampleImage/example.gif)
 
-![avatar][doge]
 
 ##安装：
 ####使用以下命令导入
