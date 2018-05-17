@@ -7,10 +7,16 @@
 
 
 ##安装：
-####使用以下命令导入
+####使用以下命令导入：
 ```
 npm install react-native-zsxslidecode
 ```
+####自动配置环境：
+```react-native link``` 
+
+or 
+
+```react-native link react-native-zsxpay```
 ##使用说明：
 ####import：
 ```
