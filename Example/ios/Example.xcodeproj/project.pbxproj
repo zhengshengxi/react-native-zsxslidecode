@@ -35,10 +35,10 @@
 		2D16E6881FA4F8E400B85C8A /* libReact.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2D16E6891FA4F8E400B85C8A /* libReact.a */; };
 		2DCD954D1E0B4F2C00145EB5 /* ExampleTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E356F21AD99517003FC87E /* ExampleTests.m */; };
 		2DF0FFEE2056DD460020B375 /* libReact.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3DAD3EA31DF850E9000B6D8A /* libReact.a */; };
+		55049FA3B58040A1A4898AF8 /* libZSXSlideCode.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 94717F6C844A49399E31F397 /* libZSXSlideCode.a */; };
 		5E9157361DD0AC6A00FF2AA8 /* libRCTAnimation.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5E9157331DD0AC6500FF2AA8 /* libRCTAnimation.a */; };
 		832341BD1AAA6AB300B99B32 /* libRCTText.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 832341B51AAA6A8300B99B32 /* libRCTText.a */; };
 		ADBDB9381DFEBF1600ED6528 /* libRCTBlob.a in Frameworks */ = {isa = PBXBuildFile; fileRef = ADBDB9271DFEBF0700ED6528 /* libRCTBlob.a */; };
-		D83CC0C634544D699D42FFC5 /* libZSXSlideCode.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E2C2459AD3449AEB061FE14 /* libZSXSlideCode.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -84,9 +84,9 @@
 			remoteGlobalIDString = 13B07F861A680F5B00A75B9A;
 			remoteInfo = Example;
 		};
-		0734AD0F20AD87F0003D9D90 /* PBXContainerItemProxy */ = {
+		07B5B5B320B17257006FF455 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 7A9472D5E0C94A728DEBA508 /* ZSXSlideCode.xcodeproj */;
+			containerPortal = 65FC7EE2E4964C9390768848 /* ZSXSlideCode.xcodeproj */;
 			proxyType = 2;
 			remoteGlobalIDString = 0734AC4520AD2B76003D9D90;
 			remoteInfo = ZSXSlideCode;
@@ -347,11 +347,11 @@
 		2D02E47B1E0B4A5D006451C7 /* Example-tvOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Example-tvOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2D02E4901E0B4A5D006451C7 /* Example-tvOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Example-tvOSTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2D16E6891FA4F8E400B85C8A /* libReact.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = libReact.a; sourceTree = BUILT_PRODUCTS_DIR; };
-		3E2C2459AD3449AEB061FE14 /* libZSXSlideCode.a */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = archive.ar; path = libZSXSlideCode.a; sourceTree = "<group>"; };
 		5E91572D1DD0AC6500FF2AA8 /* RCTAnimation.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTAnimation.xcodeproj; path = "../node_modules/react-native/Libraries/NativeAnimation/RCTAnimation.xcodeproj"; sourceTree = "<group>"; };
+		65FC7EE2E4964C9390768848 /* ZSXSlideCode.xcodeproj */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = "wrapper.pb-project"; name = ZSXSlideCode.xcodeproj; path = "../node_modules/react-native-zsxslidecode/ios/ZSXSlideCode.xcodeproj"; sourceTree = "<group>"; };
 		78C398B01ACF4ADC00677621 /* RCTLinking.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTLinking.xcodeproj; path = "../node_modules/react-native/Libraries/LinkingIOS/RCTLinking.xcodeproj"; sourceTree = "<group>"; };
-		7A9472D5E0C94A728DEBA508 /* ZSXSlideCode.xcodeproj */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = "wrapper.pb-project"; name = ZSXSlideCode.xcodeproj; path = "../node_modules/react-native-zsxslidecode/ios/ZSXSlideCode.xcodeproj"; sourceTree = "<group>"; };
 		832341B01AAA6A8300B99B32 /* RCTText.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTText.xcodeproj; path = "../node_modules/react-native/Libraries/Text/RCTText.xcodeproj"; sourceTree = "<group>"; };
+		94717F6C844A49399E31F397 /* libZSXSlideCode.a */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = archive.ar; path = libZSXSlideCode.a; sourceTree = "<group>"; };
 		ADBDB91F1DFEBF0600ED6528 /* RCTBlob.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTBlob.xcodeproj; path = "../node_modules/react-native/Libraries/Blob/RCTBlob.xcodeproj"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -381,7 +381,7 @@
 				832341BD1AAA6AB300B99B32 /* libRCTText.a in Frameworks */,
 				00C302EA1ABCBA2D00DB3ED1 /* libRCTVibration.a in Frameworks */,
 				139FDEF61B0652A700C62182 /* libRCTWebSocket.a in Frameworks */,
-				D83CC0C634544D699D42FFC5 /* libZSXSlideCode.a in Frameworks */,
+				55049FA3B58040A1A4898AF8 /* libZSXSlideCode.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -473,15 +473,15 @@
 		0734ACE620AD87EF003D9D90 /* Recovered References */ = {
 			isa = PBXGroup;
 			children = (
-				3E2C2459AD3449AEB061FE14 /* libZSXSlideCode.a */,
+				94717F6C844A49399E31F397 /* libZSXSlideCode.a */,
 			);
 			name = "Recovered References";
 			sourceTree = "<group>";
 		};
-		0734AD0C20AD87F0003D9D90 /* Products */ = {
+		07B5B5B020B17257006FF455 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				0734AD1020AD87F0003D9D90 /* libZSXSlideCode.a */,
+				07B5B5B420B17257006FF455 /* libZSXSlideCode.a */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -584,7 +584,7 @@
 				832341B01AAA6A8300B99B32 /* RCTText.xcodeproj */,
 				00C302DF1ABCB9EE00DB3ED1 /* RCTVibration.xcodeproj */,
 				139FDEE61B06529A00C62182 /* RCTWebSocket.xcodeproj */,
-				7A9472D5E0C94A728DEBA508 /* ZSXSlideCode.xcodeproj */,
+				65FC7EE2E4964C9390768848 /* ZSXSlideCode.xcodeproj */,
 			);
 			name = Libraries;
 			sourceTree = "<group>";
@@ -797,8 +797,8 @@
 					ProjectRef = 146833FF1AC3E56700842450 /* React.xcodeproj */;
 				},
 				{
-					ProductGroup = 0734AD0C20AD87F0003D9D90 /* Products */;
-					ProjectRef = 7A9472D5E0C94A728DEBA508 /* ZSXSlideCode.xcodeproj */;
+					ProductGroup = 07B5B5B020B17257006FF455 /* Products */;
+					ProjectRef = 65FC7EE2E4964C9390768848 /* ZSXSlideCode.xcodeproj */;
 				},
 			);
 			projectRoot = "";
@@ -847,11 +847,11 @@
 			remoteRef = 00C302E31ABCB9EE00DB3ED1 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		0734AD1020AD87F0003D9D90 /* libZSXSlideCode.a */ = {
+		07B5B5B420B17257006FF455 /* libZSXSlideCode.a */ = {
 			isa = PBXReferenceProxy;
 			fileType = archive.ar;
 			path = libZSXSlideCode.a;
-			remoteRef = 0734AD0F20AD87F0003D9D90 /* PBXContainerItemProxy */;
+			remoteRef = 07B5B5B320B17257006FF455 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
 		139105C11AF99BAD00B5F7CC /* libRCTSettings.a */ = {
