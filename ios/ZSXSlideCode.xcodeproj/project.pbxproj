@@ -41,8 +41,6 @@
 		0734AC9120AD2D7C003D9D90 /* DWSlideCaptchaView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DWSlideCaptchaView.m; sourceTree = "<group>"; };
 		0734AC9620AD3089003D9D90 /* ZSXSlideCodeView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZSXSlideCodeView.h; sourceTree = "<group>"; };
 		0734AC9720AD3089003D9D90 /* ZSXSlideCodeView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZSXSlideCodeView.m; sourceTree = "<group>"; };
-		0734ACA320AD4624003D9D90 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		0734ACBA20AD4850003D9D90 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,8 +58,6 @@
 			isa = PBXGroup;
 			children = (
 				0734AC4720AD2B76003D9D90 /* ZSXSlideCode */,
-				0734ACA220AD4624003D9D90 /* Resources */,
-				0734ACB920AD4850003D9D90 /* Resources */,
 				0734AC4620AD2B76003D9D90 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -90,22 +86,6 @@
 				0734AC9720AD3089003D9D90 /* ZSXSlideCodeView.m */,
 			);
 			path = ZSXSlideCode;
-			sourceTree = "<group>";
-		};
-		0734ACA220AD4624003D9D90 /* Resources */ = {
-			isa = PBXGroup;
-			children = (
-				0734ACA320AD4624003D9D90 /* Info.plist */,
-			);
-			path = Resources;
-			sourceTree = "<group>";
-		};
-		0734ACB920AD4850003D9D90 /* Resources */ = {
-			isa = PBXGroup;
-			children = (
-				0734ACBA20AD4850003D9D90 /* Info.plist */,
-			);
-			path = Resources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

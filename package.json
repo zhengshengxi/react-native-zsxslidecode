@@ -1,6 +1,6 @@
 {
   "name": "react-native-zsxslidecode",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "##简介： 滑动验证码，目前只支持iOS",
   "main": "index.js",
   "scripts": {
