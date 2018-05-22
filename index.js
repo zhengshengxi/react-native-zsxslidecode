@@ -30,6 +30,12 @@ export class ZSXSlideCode extends Component {
         maximumTrackTintColor: PropTypes.string,
 
         /**
+         * 重新开始验证 ：true
+         *
+         * */
+        reStart: PropTypes.bool,
+
+        /**
          * 验证结果回调 必须的
          * 返回 成功：true    失败：false
          * 取值: e.nativeEvent.result

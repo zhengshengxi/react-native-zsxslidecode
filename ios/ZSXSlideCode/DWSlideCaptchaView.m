@@ -72,7 +72,8 @@
     self.layer.contents = (id)self.bgImage.CGImage;
     [self handlePositionLayer];
     [self handleThumbLayer];
-    [self hideThumbWithAnimated:NO];
+//    [self hideThumbWithAnimated:NO];
+    self.positionImgV.hidden = NO;
 }
 
 -(void)reset {
@@ -96,6 +97,7 @@
                 [self hideThumbWithAnimated:NO];
                 DWLayerTransactionWithAnimation(NO, ^(){
                     self.positionLayer.opacity = 0;
+                    self.positionImgV.hidden = YES;
                 });
             } else {///使用指定动画
                 [self.thumbLayer addAnimation:self.successAnimation forKey:@"successAnimation"];
@@ -147,6 +149,7 @@
 -(void)hideThumbWithAnimated:(BOOL)animated {
     DWLayerTransactionWithAnimation(animated, ^(){
         self.thumbLayer.opacity = 0;
+//        self.thumbLayer.opacity = 1;//滑块改为始终显示
     });
 }
 
@@ -156,6 +159,12 @@
     thumbImage = [thumbImage dw_ClipImageWithPath:self.thumbShape mode:(DWContentModeScaleToFill)];
     self.thumbLayer.contents = (id)thumbImage.CGImage;
     self.thumbLayer.frame = self.positionLayer.frame;
+    //阴影
+    self.thumbLayer.shadowColor = [UIColor blackColor].CGColor;
+    self.thumbLayer.shadowOffset = CGSizeMake(0, 0);
+    self.thumbLayer.shadowOpacity = 1.0f;
+    self.thumbLayer.shadowRadius = 3;
+    
     [self setValue:0 animated:NO];
     if (!self.thumbLayer.superlayer) {
         [self.layer addSublayer:self.thumbLayer];
@@ -164,12 +173,55 @@
 
 -(void)handlePositionLayer {
     UIBezierPath * path = [self.thumbShape copy];
-    self.positionLayer.fillColor = [UIColor colorWithWhite:1 alpha:0.7].CGColor;
+    self.positionLayer.fillColor = [UIColor colorWithRed:255/255 green:255/255 blue:255/255 alpha:0.6f].CGColor;
     self.positionLayer.path = path.CGPath;
+    self.positionLayer.lineJoin = kCALineJoinRound;
+//    self.positionLayer.lineWidth = 2;
+//    self.positionLayer.strokeColor = [UIColor colorWithWhite:0 alpha:0.5f].CGColor;
+    
+    self.positionLayer.shadowColor = [UIColor blackColor].CGColor;
+    self.positionLayer.shadowOffset = CGSizeMake(0, 0);
+    self.positionLayer.shadowRadius = 2;
+    self.positionLayer.shadowOpacity = 0.9;
+    
+    
+//    CGContextRef context = UIGraphicsGetCurrentContext();
+//    CGPathRef roundedRect = [UIBezierPath bezierPathWithRoundedRect:self.positionLayer.frame cornerRadius:0.0f].CGPath;
+//    CGContextAddPath(context, roundedRect);
+//
+//    CGContextSetShadowWithColor(UIGraphicsGetCurrentContext(), CGSizeMake(0,0), 7.0f, [UIColor colorWithWhite:0 alpha:1].CGColor);
+//    CGContextSetStrokeColorWithColor(context, [UIColor colorWithWhite:0 alpha:1].CGColor);
+//    CGContextStrokePath(context);
+    
+    
     self.positionLayer.frame = CGRectMake(self.targetPoint.x, self.targetPoint.y, (int)path.bounds.size.width, (int)path.bounds.size.height);
     if (!self.positionLayer.superlayer) {
-        [self.layer addSublayer:self.positionLayer];
+//        [self.layer addSublayer:self.positionLayer];
     }
+    
+    self.positionImgV.frame = self.positionLayer.frame;
+    NSData *shadowImageData = [[NSData alloc]initWithBase64EncodedString:kImage_Shadow options:NSDataBase64DecodingIgnoreUnknownCharacters];
+    self.positionImgV.image = [UIImage imageWithData:shadowImageData];
+    [self insertSubview:self.positionImgV atIndex:0];
+    
+    
+    /*
+     CGRect rect1 = _cap.captchaView.positionLayer.bounds;
+     CGSize radii = CGSizeMake(0, 0);
+     UIRectCorner corners = UIRectCornerTopRight | UIRectCornerBottomRight | UIRectCornerBottomLeft;
+     //create path
+     UIBezierPath *path = [UIBezierPath bezierPathWithRoundedRect:rect1 byRoundingCorners:corners cornerRadii:radii];
+     //create shape layer
+     CAShapeLayer *shapeLayer = [CAShapeLayer layer];
+     shapeLayer.strokeColor = [UIColor redColor].CGColor;
+     shapeLayer.fillColor = [UIColor clearColor].CGColor;
+     shapeLayer.lineWidth = 2;
+     shapeLayer.lineJoin = kCALineJoinRound;
+     shapeLayer.lineCap = kCALineCapRound;
+     shapeLayer.path = path.CGPath;
+     shapeLayer.lineDashPattern = @[@3, @5];//画虚线
+     [_cap.captchaView.positionLayer addSublayer:shapeLayer];
+     */
 }
 
 #pragma mark --- animation delegate ---
@@ -280,6 +332,13 @@ static inline CAAnimation * defaultFailAnimation(id<CAAnimationDelegate> delegat
         _thumbLayer = [CAShapeLayer layer];
     }
     return _thumbLayer;
+}
+
+-(UIImageView *)positionImgV {
+    if (!_positionImgV) {
+        _positionImgV = [UIImageView new];
+    }
+    return _positionImgV;
 }
 
 -(void)setThumbShape:(UIBezierPath *)thumbShape {
@@ -426,7 +485,7 @@ static inline CAAnimation * defaultFailAnimation(id<CAAnimationDelegate> delegat
 -(void)dw_CaptchaView:(DWSlideCaptchaView *)captchaView animationCompletionWithSuccess:(BOOL)success {
     if (!success) {
         [self.captchaView setValue:0 animated:YES];
-        [self.captchaView hideThumbWithAnimated:YES];
+//        [self.captchaView hideThumbWithAnimated:YES];
     }
 }
 
@@ -468,4 +527,5 @@ static inline CAAnimation * defaultFailAnimation(id<CAAnimationDelegate> delegat
     
     return [UIColor colorWithRed:((float) r / 255.0f) green:((float) g / 255.0f) blue:((float) b / 255.0f) alpha:1.0f];
 }
+
 @end

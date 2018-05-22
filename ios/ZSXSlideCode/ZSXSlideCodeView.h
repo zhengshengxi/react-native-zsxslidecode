@@ -15,6 +15,7 @@
 @property(nonatomic,copy)NSString *buttonImageBase64;
 @property(nonatomic,copy)NSString *minimumTrackTintColor;
 @property(nonatomic,copy)NSString *maximumTrackTintColor;
+@property(nonatomic,assign)BOOL reStart;
 /**
  消息回调 将检测过程的状态消息回调给RN
  */

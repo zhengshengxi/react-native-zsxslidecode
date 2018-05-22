@@ -22,17 +22,24 @@
     return self;
 }
 
--(void)drawRect:(CGRect)rect {
-    [super drawRect:rect];
+-(void)bulidCaptchaView {
+    if (_cap.superview) {
+        [_cap removeFromSuperview];
+        _cap = nil;
+    }
     if (!_imageBase64.length) {
         _imageBase64 = kImage_image;
+    }
+    if ([_imageBase64 hasPrefix:@"data:image"]) {
+        NSArray *arrStr = [_imageBase64 componentsSeparatedByString:@"base64,"];
+        _imageBase64 = [NSString stringWithFormat:@"%@",arrStr.lastObject];
     }
     UIImage *decodedImage = nil;
     if (_imageBase64.length) {
         NSData *decodedImageData = [[NSData alloc]initWithBase64EncodedString:_imageBase64 options:NSDataBase64DecodingIgnoreUnknownCharacters];
         decodedImage = [UIImage imageWithData:decodedImageData];
     }
-    _cap = [[DWDefaultSlideCaptchaView alloc] initWithFrame:rect image:decodedImage slider:nil];
+    _cap = [[DWDefaultSlideCaptchaView alloc] initWithFrame:self.frame image:decodedImage slider:nil];
     __weak typeof(self) selfWeak = self;
     _cap.indentifyCompletion = ^(BOOL success) {
         //回调验证结果
@@ -54,6 +61,19 @@
     //按钮图片
     NSData *decodedImageData = [[NSData alloc]initWithBase64EncodedString:kImage_Group options:NSDataBase64DecodingIgnoreUnknownCharacters];
     [_cap.slider setThumbImage:[UIImage imageWithData:decodedImageData] forState:0];
+}
+
+-(void)setReStart:(BOOL)reStart {
+    _reStart = reStart;
+    if (_reStart) {
+        [_cap.captchaView reset];
+    }
+}
+
+-(void)drawRect:(CGRect)rect {
+    [super drawRect:rect];
+    
+    [self bulidCaptchaView];
 }
 /*
 // Only override drawRect: if you perform custom drawing.

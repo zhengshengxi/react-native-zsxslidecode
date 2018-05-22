@@ -16,7 +16,7 @@ npm install react-native-zsxslidecode
 
 or 
 
-```react-native link react-native-zsxpay```
+```react-native link react-native-zsxslidecode ```
 ##使用说明：
 ####import：
 ```
@@ -29,6 +29,7 @@ import ZSXSlideCode from 'react-native-zsxslidecode';
             // imageBase64={''}
             // minimumTrackTintColor={'#000000'}
             // maximumTrackTintColor={'#000000'}
+                          reStart={this.state.reStart}
                             onResult={(e)=>{
                                 if (e.nativeEvent.result == true){
                                     //成功
@@ -36,7 +37,7 @@ import ZSXSlideCode from 'react-native-zsxslidecode';
                                 else  {
                                     //失败
                                 }
-                                this.setState({result:e.nativeEvent.result,})
+                                this.setState({result:e.nativeEvent.result,reStart:false})
                             }}
         />
 ```
@@ -65,6 +66,12 @@ import ZSXSlideCode from 'react-native-zsxslidecode';
          *
          * */
         maximumTrackTintColor: PropTypes.string,
+        
+        /**
+         * 重新开始验证 ：true
+         *
+         * */
+        reStart: PropTypes.bool,
 
         /**
          * 验证结果回调 必须的

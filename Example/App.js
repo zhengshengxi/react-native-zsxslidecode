@@ -26,6 +26,7 @@ export default class App extends Component<Props> {
         super(props);
         this.state = {
             result:false,
+            reStart:false,
         }
     }
     render() {
@@ -35,6 +36,7 @@ export default class App extends Component<Props> {
                     // imageBase64={''}
                     // minimumTrackTintColor={'#000000'}
                     // maximumTrackTintColor={'#000000'}
+                              reStart={this.state.reStart}
                               onResult={(e)=>{
                                   if (e.nativeEvent.result == true){
                                       //成功
@@ -42,10 +44,13 @@ export default class App extends Component<Props> {
                                   else  {
                                       //失败
                                   }
-                                  this.setState({result:e.nativeEvent.result,})
+                                  this.setState({result:e.nativeEvent.result,reStart:false})
                               }}
                 />
                 <Text style={styles.welcome}>验证{this.state.result==true?'成功':'请拖动滑块完成拼图'}</Text>
+                <Text style={{textAlign: 'center',marginTop:20,}} onPress={()=>{
+                    this.setState({reStart:true})
+                }}>重新开始验证</Text>
             </View>
         );
     }

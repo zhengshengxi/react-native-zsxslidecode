@@ -53,6 +53,9 @@
 ///滑块层
 @property (nonatomic ,strong ,readonly) CAShapeLayer * thumbLayer;
 
+///验证位置遮罩层，图像
+@property(nonatomic ,strong) UIImageView *positionImgV;
+
 /**
  滑块相关属性
  */
